@@ -51,7 +51,6 @@ mvn -Dwtpversion=1.0 eclipse:clean        清除Eclipse项目的配置信息(Web
 mvn eclipse:eclipse                将项目转化为Eclipse项目
 
 在应用程序用使用多个存储库
-<pre>
 `
 <repositories>
     <repository>
@@ -66,7 +65,6 @@ mvn eclipse:eclipse                将项目转化为Eclipse项目
     </repository>
 </repositories>
 `
-</pre>
 
 mvn deploy:deploy-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar -DrepositoryId=maven-repository-inner -Durl=ftp://xxxxxxx/opt/maven/repository/
 
