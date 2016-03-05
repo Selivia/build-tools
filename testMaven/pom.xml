@@ -5,8 +5,17 @@
   <artifactId>webDemo</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>webDemo</name>
-  <url>http://maven.apache.org</url>
+  <name>testMaven</name>
+  <url>http://www.weyem.com</url>
+  <description>
+    这是maven 的 一个小练习项目
+  </description>
+    <contributors>
+      <contributor>
+        <name>ye.liqing</name>
+        <email>ylq4955@gmail.com</email>
+      </contributor>
+    </contributors>
   <distributionManagement>
     <repository>
       <!--releases版本发布地址-->
