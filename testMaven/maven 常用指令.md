@@ -53,17 +53,28 @@ mvn eclipse:eclipse                将项目转化为Eclipse项目
 在应用程序用使用多个存储库
 `
 <repositories>
+
     <repository>
+
         <id>Ibiblio</id>
+
         <name>Ibiblio</name>
+
         <url>http://www.ibiblio.org/maven/</url>
-    </repository>
+
+   </repository>
+
     <repository>
+
         <id>PlanetMirror</id>
+
         <name>Planet Mirror</name>
+
         <url>http://public.planetmirror.com/pub/maven/</url>
+
     </repository>
 </repositories>
+
 `
 
 mvn deploy:deploy-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar -DrepositoryId=maven-repository-inner -Durl=ftp://xxxxxxx/opt/maven/repository/
