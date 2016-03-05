@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.weyem</groupId>
   <artifactId>webDemo</artifactId>
@@ -7,25 +7,25 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>webDemo</name>
   <url>http://maven.apache.org</url>
-  <distributionManagement>
-    <repository>
-      <!--releasesç‰ˆæœ¬å‘å¸ƒåœ°å€-->
-      <id>releases</id>
-      <name>User Project Release</name>
-      <url>http://localhost:8081/nexus/content/repositories/releases/</url>
-    </repository>
-    <snapshotRepository>
-      <!--snapshotsç‰ˆæœ¬å‘å¸ƒåœ°å€-->
-      <id>snapshots</id>
-      <name>User Project SNAPSHOTS</name>
-      <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
-  <properties>
-    <file.encoding>UTF-8</file.encoding>
-    <java.source.version>1.7</java.source.version>
-    <java.target.version>1.7</java.target.version>
-  </properties>
+    <distributionManagement>
+      <repository>
+        <!--releases°æ±¾·¢²¼µØÖ·-->
+        <id>releases</id>
+        <name>User Project Release</name>
+        <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+      </repository>
+      <snapshotRepository>
+        <!--snapshots°æ±¾·¢²¼µØÖ·-->
+        <id>snapshots</id>
+        <name>User Project SNAPSHOTS</name>
+        <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+      </snapshotRepository>
+    </distributionManagement>
+    <properties>
+      <file.encoding>UTF-8</file.encoding>
+      <java.source.version>1.7</java.source.version>
+      <java.target.version>1.7</java.target.version>
+    </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -33,17 +33,17 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+	<dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
-    </dependency>
-    <dependency>
+	</dependency>
+	<dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-servlet-api</artifactId>
       <version>7.0.37</version>
       <scope>provided</scope>
-    </dependency>
+	</dependency>
     <dependency>
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc</artifactId>
@@ -52,21 +52,21 @@
   </dependencies>
   <build>
     <finalName>webDemo</finalName>
-    <!--maven å±žæ€§è¿‡æ»¤-->
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-        <filtering>true</filtering>
-      </testResource>
-    </testResources>
+      <!--maven ÊôÐÔ¹ýÂË-->
+      <resources>
+        <resource>
+          <directory>src/main/resources</directory>
+          <filtering>true</filtering>
+        </resource>
+      </resources>
+      <testResources>
+        <testResource>
+          <directory>src/test/resources</directory>
+          <filtering>true</filtering>
+        </testResource>
+      </testResources>
     <plugins>
-      <!--javaç¼–è¯‘level-->
+      <!--java±àÒëlevel-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -76,13 +76,13 @@
           <target>${java.target.version}</target>
         </configuration>
       </plugin>
-      <!--tomcat7çƒ­éƒ¨ç½²æ’ä»¶-->
+      <!--tomcat7ÈÈ²¿Êð²å¼þ-->
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
       </plugin>
-      <!--è®¾ç½®artifacçš„åŽç¼€-->
+      <!--ÉèÖÃartifacµÄºó×º-->
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
@@ -101,7 +101,7 @@
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                  <descriptor>src/main/assembly/assembly.xml</descriptor>
               </descriptors>
               <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -113,7 +113,7 @@
           </execution>
         </executions>
       </plugin>
-      <!--javaDocæ’ä»¶-->
+        <!--javaDoc²å¼þ-->
       <!--<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -136,7 +136,7 @@
             <id>attach-sources</id>
             <phase>verify</phase>
             <goals>
-              <goal>jar-no-fork</goal>
+                <goal>jar-no-fork</goal>
             </goals>
           </execution>
         </executions>
@@ -146,14 +146,14 @@
   </build>
   <profiles>
     <profile>
-      <!--æ­£å¼çŽ¯å¢ƒæ•°æ®åº“-->
+      <!--ÕýÊ½»·¾³Êý¾Ý¿â-->
       <id>production</id>
-      <activation>
-        <property>
-          <name>environment.type</name>
-          <value>prod</value>
-        </property>
-      </activation>
+        <activation>
+          <property>
+            <name>environment.type</name>
+            <value>prod</value>
+          </property>
+        </activation>
       <properties>
         <jdbc.driverclassname>oracle.jdbc.driver.OracleDriver</jdbc.driverclassname>
         <jdbc.url>jdbc:oracle:thin@localhost:1521:orcl</jdbc.url>
@@ -162,7 +162,7 @@
       </properties>
     </profile>
     <profile>
-      <!--æ¨¡æ‹ŸçŽ¯å¢ƒæ•°æ®åº“-->
+      <!--Ä£Äâ»·¾³Êý¾Ý¿â-->
       <id>simulation</id>
       <properties>
         <jdbc.driverclassname>oracle.jdbc.driver.OracleDriver</jdbc.driverclassname>
@@ -172,7 +172,7 @@
       </properties>
     </profile>
     <profile>
-      <!--æµ‹è¯•çŽ¯å¢ƒæ•°æ®åº“-->
+      <!--²âÊÔ»·¾³Êý¾Ý¿â-->
       <id>test</id>
       <properties>
         <jdbc.driverclassname>oracle.jdbc.driver.OracleDriver</jdbc.driverclassname>
@@ -182,14 +182,14 @@
       </properties>
     </profile>
     <profile>
-      <!--å¼€å‘çŽ¯å¢ƒæ•°æ®åº“-->
+      <!--¿ª·¢»·¾³Êý¾Ý¿â-->
       <id>development</id>
-      <activation>
-        <property>
-          <name>environment.type</name>
-          <value>dev</value>
-        </property>
-      </activation>
+        <activation>
+          <property>
+            <name>environment.type</name>
+            <value>dev</value>
+          </property>
+        </activation>
       <properties>
         <jdbc.driverclassname>oracle.jdbc.driver.OracleDriver</jdbc.driverclassname>
         <jdbc.url>jdbc:oracle:thin@localhost:1521:orcl</jdbc.url>

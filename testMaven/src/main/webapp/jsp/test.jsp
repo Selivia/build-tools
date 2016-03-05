@@ -8,7 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
+    <base href="<%=basePath%>">
+    <base href="<%=basePath%>">
+
     <title>My JSP 'test.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
@@ -22,6 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   <body>
-  <input type="button" value ="终于成功了???" onclick="window.location.href='<%=path %>/servlet/Test'">
+   终于过来了---o(╯□╰)o
   </body>
 </html>
