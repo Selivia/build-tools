@@ -91,10 +91,15 @@ mvn generate-sources    产生应用需要的任何额外的源代码，如xdocl
 
 # 常用命令： 
 mvn -v 显示版本 
+
 mvn help:describe -Dplugin=help 使用 help 插件的  describe 目标来输出 Maven Help 插件的信息。 
+
 mvn help:describe -Dplugin=help -Dfull 使用Help 插件输出完整的带有参数的目标列 
+
 mvn help:describe -Dplugin=compiler -Dmojo=compile -Dfull 获取单个目标的信息,设置  mojo 参数和  plugin 参数。此命令列出了Compiler 插件的compile 目标的所有信息 
+
 mvn help:describe -Dplugin=exec -Dfull 列出所有 Maven Exec 插件可用的目标 
+
 mvn help:effective-pom 看这个“有效的 (effective)”POM，它暴露了 Maven的默认设置 
 
 mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch03 -DartifactId=simple -DpackageName=org.sonatype.mavenbook 创建Maven的普通java项目，在命令行使用Maven Archetype 插件 
